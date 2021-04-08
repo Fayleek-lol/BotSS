@@ -72,7 +72,7 @@ def send_text(message):
                          "государств или 252 страны, взаимодействующих между собой."
                          "Масса - 5,972E24 кг"
                          "Спутники - Луна")
-        sti = open('Венера.jpg', 'rb')
+        sti = open('Земля.jpg', 'rb')
         bot.send_sticker(message.chat.id, sti)
     elif message.text == "Марс":
         bot.send_message(message.from_user.id,
