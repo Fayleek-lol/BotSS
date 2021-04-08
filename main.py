@@ -3,6 +3,8 @@ import telebot
 bot = telebot.TeleBot('1756217731:AAFJZYYU9GrQezzgSrHCHOdZ1hvW0Cg5Zoo')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
+keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard1.row('Планеты', 'Солнечная система', 'Спутники', 'Солнце', 'МКС')
 
 
 @bot.message_handler(commands=['start'])
@@ -14,11 +16,11 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
-    if message.text == "Привет":
+    if message.text == "Привет" or "привет":
         bot.send_message(message.from_user.id,
                          "Привет! ")
         bot.send_message(message.from_user.id,
-                         "Вот что я могу:")
+                         "О чем ты хочещь узнать?")
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Напиши Привет")
     elif message.text == "Пока":
@@ -26,6 +28,8 @@ def send_text(message):
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
+    if bot.send_message(message.from_user.id, "О чем ты хочешь узнать?"):
+        bot.reply_to(message, " ", reply_markup=keyboard2)
+
 
 bot.polling(none_stop=True, interval=0)
-
