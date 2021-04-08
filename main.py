@@ -34,14 +34,10 @@ def send_text(message):
         bot.send_message(message.from_user.id,
                          f'Я бот-гид по Солнечной системе. Приятно познакомиться, {message.from_user.first_name}, и да '
                          f'прибудет с тобой сила!', reply_markup=keyboard1)
+    elif message.text == "Планеты":
+        bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?", reply_markup=keyboard3)
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
-
-
-@bot.message_handler(content_types=['text'])
-def send_planet(message):
-    if message.text == "Планеты":
-        bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?", reply_markup=keyboard3)
 
 
 bot.polling(none_stop=True, interval=0)
