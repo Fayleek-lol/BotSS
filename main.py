@@ -7,6 +7,8 @@ keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard2.row('Планеты', 'Солнечная система', 'Спутники', 'Солнце', 'МКС', 'Пока')
+keyboard3 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard3.row('Меркурий', 'Венера', 'Земля', 'Марс', 'Юпитер', 'Сатурн', ' Уран', 'Нептун')
 
 
 @bot.message_handler(commands=['start'])
@@ -42,7 +44,7 @@ def send_text(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text == "Планеты":
-        bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?")
+        bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?", reply_markup=keyboard3)
 
 
 bot.polling(none_stop=True, interval=0)
