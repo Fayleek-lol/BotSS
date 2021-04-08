@@ -16,7 +16,7 @@ def send_welcome(message):
 def send_text(message):
     if message.text == "Привет":
         bot.send_message(message.from_user.id,
-                         "Привет!")
+                         "Привет! ")
         bot.send_message(message.from_user.id,
                          "Вот что я могу:")
     elif message.text == "/help":
