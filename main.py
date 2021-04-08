@@ -94,7 +94,7 @@ def send_text(message):
                          "Современное название Юпитера происходит от имени древнеримского верховного бога-громовержца"
                          "Масса Юпитера в 2,47 раза превышает массу всех остальных планет Солнечной системы"
                          "Спутники - Европа, Ио, Ганимед, Каллисто")
-        sti = open('Юритер.jpg', 'rb')
+        sti = open('Юпитер.jpg', 'rb')
         bot.send_sticker(message.chat.id, sti)
     elif message.text == "Сатурн":
         bot.send_message(message.from_user.id,
