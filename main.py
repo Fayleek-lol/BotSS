@@ -39,7 +39,7 @@ def send_text(message):
 
 
 @bot.message_handler(content_types=['text'])
-def send_text(message):
+def send_planet(message):
     if message.text == "Планеты":
         bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?", reply_markup=keyboard3)
 
