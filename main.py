@@ -37,6 +37,10 @@ def send_text(message):
                          "Прощай", reply_markup=keyboard)
     elif message.text == "Планеты":
         bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?")
+    elif message.text == "start":
+        bot.send_message(message.from_user.id,
+                         f'Я бот-гид по Солнечной системе. Приятно познакомиться, {message.from_user.first_name}, и да '
+                         f'прибудет с тобой сила!', reply_markup=keyboard1)
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
