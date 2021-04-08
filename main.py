@@ -27,7 +27,7 @@ def send_text(message):
         bot.send_message(message.from_user.id, "Напиши Привет")
     elif message.text == "Пока":
         bot.send_message(message.from_user.id,
-                         "Прощай", reply_markup=keyboard2)
+                         "Прощай", reply_markup=keyboard)
     elif message.text == "Планеты":
         bot.send_message(message.from_user.id, "О какой планете ты хочешь узнать?")
     else:
