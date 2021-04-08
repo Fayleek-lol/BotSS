@@ -1,6 +1,8 @@
 import telebot
 
 bot = telebot.TeleBot('1756217731:AAFJZYYU9GrQezzgSrHCHOdZ1hvW0Cg5Zoo')
+keyboard = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard.row('start')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
@@ -20,7 +22,7 @@ def send_text(message):
         bot.send_message(message.from_user.id,
                          "Привет! ")
         bot.send_message(message.from_user.id,
-                         "О чем ты хочешь узнать?", reply_markup=keyboard1)
+                         "О чем ты хочешь узнать?", reply_markup=keyboard2)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Напиши Привет")
     elif message.text == "Пока":
