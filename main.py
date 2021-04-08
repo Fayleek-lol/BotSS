@@ -20,7 +20,7 @@ def send_welcome(message):
     else:
         bot.reply_to(message,
                      f'Я бот-гид по Солнечной системе. Приятно познакомиться, {message.from_user.first_name}, и да '
-                     f'прибудет с тобой сила!', reply_markup=keyboard1)
+                     f'прибудет   с тобой сила!', reply_markup=keyboard1)
 
 
 @bot.message_handler(content_types=['text'])
