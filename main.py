@@ -8,7 +8,7 @@ keyboard1.row('Привет', 'Пока')
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard2.row('Планеты', 'Солнечная система', 'Спутники', 'Солнце', 'МКС', 'Пока')
 keyboard3 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard3.row('Меркурий', 'Венера', 'Земля', 'Марс', 'Юпитер', 'Сатурн', ' Уран', 'Нептун', 'Пока')
+keyboard3.row('Меркурий', 'Венера', 'Земля', 'Марс', 'Юпитер', 'Сатурн', ' Уран', 'Нептун', 'Назад')
 
 
 @bot.message_handler(commands=['start'])
@@ -154,6 +154,8 @@ def send_text(message):
                          "Намного более массивны, чем планеты земной группы.")
         sti = open('солнечная_система.jpg', 'rb')
         bot.send_sticker(message.chat.id, sti)
+    elif message.text == "Назад":
+        bot.send_message(message.from_user.id, "О чем ты хочешь узнать?", reply_markup=keyboard2)
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
