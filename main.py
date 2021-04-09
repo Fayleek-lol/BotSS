@@ -160,6 +160,17 @@ def send_text(message):
         bot.send_sticker(message.chat.id, sti)
     elif message.text == "Назад":
         bot.send_message(message.from_user.id, "О чем ты хочешь узнать?", reply_markup=keyboard2)
+    elif message.text == "МКС":
+        bot.send_message(message.from_user.id,
+                         "Международная космическая станция, сокр. МКС (англ. International Space Station,)—"
+                         "Пилотируемая орбитальная станция, используемая как многоцелевой космический исследовательский"
+                         " комплекс; эксплуатируется с конца 1998 года по настоящее время "
+                         "(странами согласована эксплуатация по 2024 год включительно). "
+                         "МКС — совместный международный проект, в котором участвуют 14 стран:"
+                         " Россия, США, Япония, Канада и входящие в Европейское космическое агентство"
+                         " Бельгия, Германия, Дания, Испания, Италия, Нидерланды, Норвегия, Франция, Швейцария, Швеция")
+        sti = open('МКС.jpg', 'rb')
+        bot.send_sticker(message.chat.id, sti)
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
