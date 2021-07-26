@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('1756217731:AAFJZYYU9GrQezzgSrHCHOdZ1hvW0Cg5Zoo')
+bot = telebot.TeleBot('1756217731:AAFJZYYU9GrQezzgSrHCHOdZ1hvW0Cg5Zo')
 keyboard = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard.row('start')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
